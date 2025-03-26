@@ -11,29 +11,31 @@
 
     <div class="container"></div>
 
-    <fieldset>
-        <legend>Book Details</legend>
-        <div>
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title">
-        </div>
-        <div>
-            <label for="author">Author:</label>
-            <input type="text" id="author" name="author">
-        </div>
-        <div>
-            <label for="pages">Page Count:</label>
-            <input type="number" id="pages" name="pages">
-        </div>
-        <div>
-            <input type="radio" id="has-read" name="read">
-            <label for="has-read">Have read</label>
-            <input type="radio" id="hasnt-read" name="read" checked>
-            <label for="hasnt-read">Have not read</label>
-        </div>
-
-        <div><button id="add-book">Add Book</button></div>
-    </fieldset>
+    <form id="book-form">
+        <fieldset>
+            <legend>Book Details</legend>
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" placeholder="Wolf of Wall Street" required>
+            </div>
+            <div>
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" placeholder="Jordan Belfort" required>
+            </div>
+            <div>
+                <label for="pages">Page Count:</label>
+                <input type="number" id="pages" name="pages" required>
+            </div>
+            <div class="select">
+                <p> Status: </p>
+                <select name="status">
+                    <option value="has-read">Have Read</option>
+                    <option value="hasnt-read" selected>Haven't Read</option>
+                </select>
+            </div>
+            <div><button type="submit" id="add-book">Add Book</button></div>
+        </fieldset>
+    </form>
 
     <script src="library.js"></script>
 </body>

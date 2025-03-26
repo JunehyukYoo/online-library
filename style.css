@@ -19,10 +19,29 @@ body {
 .book {
     padding: 5px;
     width: 150px;
+    height: 150px;
+
+    background-color: #d6d6d6e7;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     border: 2px;
     border-style: solid;
     border-color: black;
     border-radius: 20px;
+}
+
+.select {
+    display: flex;
+    align-items: center;
+}
+
+select {
+    margin-left: 5px;
 }
 
 fieldset {
@@ -37,4 +56,14 @@ legend {
 
 fieldset > div{
     margin: 1rem;
+}
+
+.remove-button,
+.change-status-button {
+    background-color: rgb(255, 255, 255);
+}
+
+.remove-button:hover,
+.change-status-button:hover {
+    background-color: rgb(229, 229, 229);
 }
