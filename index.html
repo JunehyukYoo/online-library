@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Library</title>
     <link rel="stylesheet" href="style.css">
-    <script src="library.js"></script>
 </head>
 <body>
     <h1>Online Library</h1>
 
-    <div id="container">DISPLAY BOOKS HERE</div>
+    <div class="container"></div>
 
     <fieldset>
         <legend>Book Details</legend>
@@ -29,11 +28,13 @@
         <div>
             <input type="radio" id="has-read" name="read">
             <label for="has-read">Have read</label>
-            <input type="radio" id="hasnt-read" name="read">
+            <input type="radio" id="hasnt-read" name="read" checked>
             <label for="hasnt-read">Have not read</label>
         </div>
 
-        <div><button>Add Book</button></div>
+        <div><button id="add-book">Add Book</button></div>
     </fieldset>
+
+    <script src="library.js"></script>
 </body>
 </html>
