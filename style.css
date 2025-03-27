@@ -12,6 +12,7 @@ body {
     margin: 1rem;
     width: 90vw;
     display: flex;
+    justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
 }
@@ -19,7 +20,7 @@ body {
 .book {
     padding: 5px;
     width: 150px;
-    height: 150px;
+    height: 200px;
 
     background-color: #d6d6d6e7;
     word-wrap: break-word;

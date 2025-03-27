@@ -55,6 +55,7 @@ function renderLibrary() {
         thisStatus.textContent = book.read ? "Status: Read" : "Status: Not Read";
         thisStatus.style.color = book.read ? "blue" : "red";
 
+        // Button wrapper in bottom wrapper
         const buttonWrapper = document.createElement("div");
         buttonWrapper.setAttribute("style", "margin: 0; display: flex;");
 
@@ -64,7 +65,8 @@ function renderLibrary() {
         removeButton.textContent = "Remove";
 
         const changeStatusButton = document.createElement("button");
-        removeButton.classList.add("change-status-button");
+        changeStatusButton.classList.add("change-status-button");
+        changeStatusButton.setAttribute("data-uuid", book.uuid);
         changeStatusButton.textContent = "Change Status"
 
         buttonWrapper.appendChild(changeStatusButton);
@@ -85,9 +87,9 @@ addBookToLibrary("Harry Potter", "J.K. Rowling", 129, false);
 addBookToLibrary("Red Rising", "Pierce Brown", 350, true);
 addBookToLibrary("The Way of Kings", "Brandon Sanderson", 550, true);
 console.table(myLibrary);
-
 renderLibrary();
 
+// Check's for form button click
 const bookForm = document.getElementById("book-form");
 bookForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -108,5 +110,11 @@ document.querySelector(".container").addEventListener("click", (e) => {
       const toRemove = e.target.dataset.uuid;
       myLibrary = myLibrary.filter((b) => b.uuid !== toRemove);
       renderLibrary();
+    } else if (e.target.matches(".change-status-button")) {
+        console.log("here");
+        const toChange = e.target.dataset.uuid;
+        const bookToChange = myLibrary.find((book) => book.uuid === toChange);
+        bookToChange.read = !bookToChange.read;
+        renderLibrary();
     }
   });
