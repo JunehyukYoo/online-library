@@ -114,22 +114,10 @@ button:active {
     transform: scale(0.98);
 }
 
-/* ----- STATUS COLORS ----- */
 .book p {
     margin: 4px 0;
 }
 
-.book p:last-of-type {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #4da6ff;
-}
-
-.book p:last-of-type.read-false {
-    color: #e57373;
-}
-
-/* ----- ALIGN BUTTONS INSIDE TILE ----- */
 .change-status-button,
 .remove-button {
     flex: 1;
