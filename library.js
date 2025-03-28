@@ -1,5 +1,3 @@
-//let myLibrary = [];
-
 class Book {
     constructor(title, author, pages, read = false) {
         this.title = title;
@@ -56,12 +54,12 @@ const library = (function() {
     
             // Bottom wrapper
             const botWrapper = document.createElement("div");
-            botWrapper.setAttribute("style", "margin: 5px; padding: 0;");
+            botWrapper.setAttribute("style", "margin: 5px; padding: 0; display: flex; flex-direction: column; justify-content: center; align-items: center;");
     
             const thisStatus = document.createElement("p");
-            thisStatus.setAttribute("style", "margin: 10px 0 0; font-size: 20px; font-weight: 400;");
+            thisStatus.setAttribute("style", "margin: 10px 0 0; font-size: 20px; font-weight: 400; text-align: center");
             thisStatus.textContent = book.read ? "Status: Read" : "Status: Not Read";
-            thisStatus.style.color = book.read ? "blue" : "red";
+            thisStatus.style.color = book.read ? "#aecbfa" : "#f28b82"; // blue vs red
     
             // Button wrapper in bottom wrapper
             const buttonWrapper = document.createElement("div");

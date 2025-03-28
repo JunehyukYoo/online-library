@@ -1,15 +1,21 @@
-body {
-    padding: 0;
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+* {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #111118);
+    color: #f0f0f0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 }
 
 .container {
-    margin: 1rem;
+    margin: 2rem 0;
     width: 90vw;
     display: flex;
     justify-content: center;
@@ -18,53 +24,119 @@ body {
 }
 
 .book {
-    padding: 5px;
-    width: 150px;
-    height: 200px;
-
-    background-color: #d6d6d6e7;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-
+    width: 180px;
+    height: 220px;
+    padding: 12px;
+    
+    background-color: #2c2c3a;
+    border: 2px solid #555;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 
-    border: 2px;
-    border-style: solid;
-    border-color: black;
-    border-radius: 20px;
+    transition: transform 0.2s ease;
+
+    overflow: hidden;
 }
 
-.select {
-    display: flex;
-    align-items: center;
+.book:hover {
+    transform: scale(1.03);
 }
 
-select {
-    margin-left: 5px;
+
+form {
+    width: 320px;
+    background-color: #2c2c3a;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 2px solid #444;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 fieldset {
-    width: 300px;
-    height: 300px;
+    border: none;
+    padding: 0;
 }
 
 legend {
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
 }
 
-fieldset > div{
-    margin: 1rem;
+fieldset > div {
+    margin: 1rem 0;
 }
 
-.remove-button,
-.change-status-button {
-    background-color: rgb(255, 255, 255);
+input,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    background-color: #1a1a24;
+    border: 1px solid #555;
+    color: #f0f0f0;
+    border-radius: 6px;
 }
 
-.remove-button:hover,
-.change-status-button:hover {
-    background-color: rgb(229, 229, 229);
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #7e57c2;
+}
+
+/* ----- BUTTONS ----- */
+button,
+input[type="submit"] {
+    background-color: #3d3d4d;
+    color: #fff;
+    border: 1px solid #666;
+    padding: 8px 12px;
+    margin: 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #4c4c5a;
+    transform: scale(1.02);
+}
+
+button:active {
+    background-color: #5e5e6b;
+    transform: scale(0.98);
+}
+
+/* ----- STATUS COLORS ----- */
+.book p {
+    margin: 4px 0;
+}
+
+.book p:last-of-type {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4da6ff;
+}
+
+.book p:last-of-type.read-false {
+    color: #e57373;
+}
+
+/* ----- ALIGN BUTTONS INSIDE TILE ----- */
+.change-status-button,
+.remove-button {
+    flex: 1;
+    margin: 4px 2px 0;
+}
+
+.book div:last-child {
+    display: flex;
+    justify-content: space-between;
 }
